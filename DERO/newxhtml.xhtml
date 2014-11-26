@@ -22,47 +22,19 @@ and open the template in the editor.
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
 
+
+
+        <img data-lazy="img/logo.png"/>
+        <img data-lazy="img/logo.png"/>
+        <img data-lazy="img/logo.png"/>
+        <img data-lazy="img/logo.png"/>
         <script type="text/javascript">
-            $('.autoplay').slick({
+            $('.lazy').slick({
+                lazyLoad: 'ondemand',
                 slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
+                slidesToScroll: 1
             });
         </script>
-
-
-        <hr/>
-        <h2>Autoplay</h2>
-        <div class="slider autoplay">
-            <div><h3>1</h3></div>
-            <div><h3>2</h3></div>
-            <div><h3>3</h3></div>
-            <div><h3>4</h3></div>
-            <div><h3>5</h3></div>
-            <div><h3>6</h3></div>
-        </div>
-        <pre><code>
-$('.autoplay').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-});
-				</code>
-
-
-                                <img data-lazy="img/logo.png"/>
-<img data-lazy="img/logo.png"/>
-<img data-lazy="img/logo.png"/>
-<img data-lazy="img/logo.png"/>
-<script type="text/javascript">
-                $('.lazy').slick({
-                    lazyLoad: 'ondemand',
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                });
-            </script>
 
     </body>
 </html>
