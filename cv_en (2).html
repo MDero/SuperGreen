@@ -1,0 +1,715 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+	
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400|Pacifico' rel='stylesheet' type='text/css'>
+		<title>Valentin Sabatet</title>
+		
+		<style>
+			/** GENERAL ************************/
+			#age {
+				display: none;
+			}
+
+			body {
+				background: white url(https://lh4.googleusercontent.com/-18vlDXruLb4/UnPbpW8TSqI/AAAAAAAAAeI/9xkroAhSWkk/s167/background.png) repeat;
+				width : 700px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			/** HEADER *************************/
+			header #portrait_header {
+				width : 145px;
+				border-radius : 6px;
+				-moz-border-radius: 6px;
+				-webkit-border-radius: 6px;
+			}
+
+			#titre {
+				font-family: 'Pacifico', cursive;
+				color : rgb(0,45,64);
+				display : inline-block;
+				margin-bottom : 20px;
+			}
+
+			#ss_titre_header {
+				font-family: 'Source Sans Pro', sans-serif;
+				color: rgb(3,99,139);
+			}
+
+			#form_img, #ci_img, #comp_img, #expe_img, #contact_img {
+				float : left;	
+				width : 35px;
+				margin-top : 20px;
+				margin-right : 10px;
+			}
+			/***********************************/
+
+
+
+			/** MENU ***************************/
+			#menu li a {
+				position : relative;
+				bottom : 4.5px;
+				text-decoration : none;
+				font-family: 'Source Sans Pro', sans-serif;
+				color : rgb(0,45,64);
+				font-size : 17px;
+			}
+
+			menu li:hover, menu li:focus {
+				text-decoration : underline;
+			}
+			/***********************************/
+
+
+			/** COMPETENCES ********************/
+			nav#competences {
+				margin-bottom : 15px;
+				margin-top : -20px;
+			}
+
+			#competences .categ {
+				margin-bottom : -15px;
+			}
+
+			#competences .first {
+				margin-top : 50px;
+			}
+
+			#comp, #langues {
+				list-style : none;
+				display:inline-block;
+				margin-left : -37px;
+				margin-top : -25px;
+			}
+
+			#comp li, #langues li {
+				display : inline-block;
+				margin-top: 15px;
+				width: 150px;
+				height: auto;
+				font-weight : bold;
+				font-size : 14px;
+				color : rgb(0,45,64);
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+
+			.header_comp {
+				display : inline-block;
+				margin-bottom : 2px;
+			}
+			
+			#competences .ico_comp {
+				float : left;
+				margin-top : 5px;
+				margin-right : 15px;
+			}
+
+			.lvl1, .lvl2, .lvl3, .lvl4, .lvl5 {
+				text-indent: -5000px;
+				display:inline-block;
+				width: 83px;
+				height: 16px;
+			}
+
+			.lvl1 {	background: url('https://lh4.googleusercontent.com/-47NNRMYtBUU/UnPbLMnkQfI/AAAAAAAAAak/GoJ2ziEHvrU/s83/niveau.png') no-repeat 0 -64px;}
+			.lvl2 {	background: url('https://lh4.googleusercontent.com/-47NNRMYtBUU/UnPbLMnkQfI/AAAAAAAAAak/GoJ2ziEHvrU/s83/niveau.png') no-repeat 0 -48px;}
+			.lvl3 {	background: url('https://lh4.googleusercontent.com/-47NNRMYtBUU/UnPbLMnkQfI/AAAAAAAAAak/GoJ2ziEHvrU/s83/niveau.png') no-repeat 0 -32px;}
+			.lvl4 {	background: url('https://lh4.googleusercontent.com/-47NNRMYtBUU/UnPbLMnkQfI/AAAAAAAAAak/GoJ2ziEHvrU/s83/niveau.png') no-repeat 0 -16px;}
+			.lvl5 {	background: url('https://lh4.googleusercontent.com/-47NNRMYtBUU/UnPbLMnkQfI/AAAAAAAAAak/GoJ2ziEHvrU/s83/niveau.png') no-repeat 0 0;}
+			/***********************************/
+
+
+			/** EXPERIENCES PROFESSIONNELLES ***/
+			nav#expe_pro {
+				margin-top:-25px;
+			}
+
+
+			.expe_section {
+				text-align : left;
+				width : 100%;
+			}
+
+			.expe_section p {
+				margin-bottom : 10px;
+			}
+
+			.expe_pro_img {
+				margin-right : 20px;
+				margin-top : 5px;	
+				width : 120px;
+			}
+			/***********************************/
+
+			/** FORMATIONS ET DIPLOMES *********/
+			nav#formations {
+				margin-top : 60px;
+				margin-bottom : 24px;
+			}
+
+			#formations .first {
+				margin-top : -15px;
+			}
+
+			.form_section .sstitre {
+				display : inline-block;
+				margin-bottom : 8px;
+			}
+			/***********************************/
+
+
+			/** CENTRES INTERET ****************/
+			nav#centres_interet {
+				margin-top : -26px;
+			}
+
+			#ci_lst {
+				list-style : none;
+				margin : -25px 0 10px -62px;
+			}
+
+			#ci_lst li {
+				display : inline-block;
+				margin-top: 10px;
+				width: 238px;
+				height: auto;
+			}
+
+			#ci_lst .content {
+				font-size : 14px;
+			}
+
+			.ico_ci{
+				float : left;
+				margin-top : -25px;
+				margin-right : 10px;
+				width : 35px;
+			}
+
+			/***********************************/
+
+			/** CONTACT ************************/
+			section#plan {
+				margin-top : -25px;
+			}
+			/***********************************/
+
+
+
+			/** FORMAT MOBILE ******************/
+			@media screen and (max-width: 500px) {
+				#form_img, #ci_img, #comp_img, #expe_img, #contact_img, .expe_pro_img {
+					display : none;
+				}
+				
+				body {
+					width : 441px;
+				}
+
+				.categ {
+					font-family: 'Pacifico', cursive;
+					color : rgb(0,45,64);
+					font-size : 30px;
+					margin-left : 75px;
+				}
+
+				.titre {
+					font-family: 'Source Sans Pro', sans-serif;
+				}
+
+				.sstitre {
+					font-family: 'Source Sans Pro', sans-serif;
+					color : rgb(0,45,64);
+					font-size : 19px;
+				}
+
+				.content {
+					font-size : 16px;
+					color : rgb(102,102,99);	
+				}
+
+				/** HEADER *************************/
+				header #portrait_header {
+					display : block;
+					margin : auto;
+					margin-bottom : 20px;
+				}
+				
+				header {
+					text-align : center;
+				}
+				
+				#age {
+					position : relative;
+					right : 170px;
+					bottom : 145px;
+				}
+
+				#titre {
+					font-size : 50px;
+					display : inline-block;
+					margin-bottom : 20px;
+					margin-top : 20px;
+				}
+
+				#ss_titre_header {
+					font-size : 28px;
+					display : inline-block;
+					margin-left : 50px;
+				}
+				/***********************************/
+
+				/** MENU **/
+				menu {
+					margin-top : 60px;
+					margin-bottom : 80px;
+				}
+				
+				menu ul {
+					display : block;
+					margin: 0;
+					padding: 0;
+				}
+				
+				menu ul li {
+					display : block;
+					text-align : left;
+					margin-top : 20px;
+					margin-left : 100px;
+				}
+				
+				menu ul li a {
+					display : inline-block;
+					margin-left : 10px;
+				}
+				
+				/*********/
+				
+				/*** COMP */
+				#comp li {
+					margin-right : 30px;
+				}
+				/**********/
+				
+				#expe_pro .categ {
+					margin-bottom : -5px;
+					margin-top : 32px;
+				}
+				
+				#expe_pro p {
+					margin-top : 25px;
+				}
+				
+				nav#expe_pro {
+					margin-bottom : 30px;
+				}
+				
+				#ci_lst li {
+					margin-left : 25px;
+				}
+				
+				footer td {
+					display : block;
+				}
+				
+				#map {
+					border : 1px solid grey;
+					width : 441px;
+					height : 162px;
+				}
+			}
+			/***********************************/
+
+
+			/* FORMAT PC */
+			@media screen and (min-width: 500px) {
+				/** HEADER *************************/
+				header #portrait_header {
+					float : left;
+					margin-right : 30px;
+				}
+
+				#titre {
+					font-size : 60px;
+				}
+
+				#ss_titre_header {
+					font-size : 40px;
+				}
+				
+				#age {
+					position : relative;
+					right : 530px;
+					top : 20px;
+				}
+				
+				.categ {
+					font-family: 'Pacifico', cursive;
+					color : rgb(0,45,64);
+					font-size : 35px;
+				}
+
+				.titre {
+					font-family: 'Source Sans Pro', sans-serif;
+				}
+
+				.sstitre {
+					font-family: 'Source Sans Pro', sans-serif;
+					color : rgb(0,45,64);
+					font-size : 19px;
+				}
+
+				.content {
+					font-size : 16px;
+					color : rgb(102,102,99);	
+				}
+				/***********************************/
+				
+				/** MENU *********/
+				menu {
+					clear : both;
+					margin-top : 42px;
+					margin-bottom: -20px;
+					border-top : 1px solid rgb(0,45,64);
+					border-bottom : 2px solid rgb(0,45,64);	
+					font-size : 30px;
+				}
+
+				menu ul {
+					padding : 0;
+					margin : 0;
+					margin-left : -30px;
+					list-style : none;
+					text-align : center;
+				}
+				
+				#menu li {
+					display : inline;
+					margin-right : 10px;
+				}
+
+				#menu li img {
+					margin-right : 6px;
+				}
+				
+				.img_menu {
+					height : 20px;
+					width : 20px;
+				}
+				/*********************/
+				
+				#ci_first {
+					position : relative;
+					bottom: 22px;
+				}
+
+				#ci_first2 {
+					position : relative;
+					bottom: 10px;
+				}
+
+				#ci_prog {
+					display : inline-block;
+					margin-top : -85px;
+				}
+				
+				#ci_prog_img {
+					position : relative;
+					bottom : 30px;
+				}
+				
+				
+				#expe_pro .categ {
+					margin-bottom : 6px;
+					margin-top : 32px;
+				}
+				
+				
+				#map {
+					border: 1px solid grey;
+					width: 438px;
+					height: 200px;
+					position: relative;
+					bottom: 200px;
+					left: 260px;
+				}
+				
+				.contact {
+					font-size : 17px;
+				}
+				
+				footer {
+					padding-bottom : 360px;
+				}
+			} 
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<img id="portrait_header" src="https://lh5.googleusercontent.com/-FyWcC_xxwqY/UnWlO40QqlI/AAAAAAAAAhY/Sb02WfK4zk0/s576/IMG_0097_2.png" alt="Portrait" />
+			
+			<span id="titre">Valentin Sabatet</span><br />
+			<span id="ss_titre_header">Bioinformatics Internship</span>
+			<span id="age">19 yo</span>
+		</header>
+		
+		<menu>
+			<ul id="menu">
+				<li class="menu_ligne"><img class="img_menu" src="https://lh4.googleusercontent.com/-O3bEIxmMg-c/UnPbhBPchfI/AAAAAAAAAdU/VobaIjWs7-g/s32/formations.png" alt="" /><a href="#formations">Education</a></li>
+				<li class="menu_ligne"><img class="img_menu" src="https://lh3.googleusercontent.com/-OBCKvcb50A0/UnPbgPMvFXI/AAAAAAAAAdQ/8vTY53dbpmA/s32/experiences_pro.png" alt="" /><a href="#expe_pro">Work experience</a></li>
+				<li class="menu_ligne"><img class="img_menu" src="https://lh4.googleusercontent.com/-GHNsyXokpVo/UnPbfYwD0MI/AAAAAAAAAdA/klLu0vvaFnE/s32/competences.png" alt="" /><a href="#competences">Professionnal skills</a></li>
+				<li class="menu_ligne"><img class="img_menu" src="https://lh3.googleusercontent.com/-sUouGP0L4Yk/UnPbffrWONI/AAAAAAAAAdE/XKGhef_7mtI/s32/centre_interet.png" alt="" /><a href="#centres_interet">Hobbies</a></li>
+				<li class="menu_ligne"><img class="img_menu" src="https://lh6.googleusercontent.com/-_MHRtX16fW4/UnPbfazRq4I/AAAAAAAAAc8/svvZhyNTDjc/s32/contact.png" alt="" /><a href="#plan">Contact</a></li>
+			</ul>
+		</menu>
+		
+		<nav id="formations">
+			<img id="form_img" src="https://lh4.googleusercontent.com/-O3bEIxmMg-c/UnPbhBPchfI/AAAAAAAAAdU/VobaIjWs7-g/s32/formations.png" alt=""/>
+			<p class="categ">Education</p>
+
+			<section class="form_section first">
+				<span class="sstitre">2012-Present <strong>Undergraduate Bioengineering</strong></span><br/>
+				<span class="content">Option bioinformatics.<br/>Clermont university 1, Aurillac.</span><br/><br/>
+			</section>
+			
+			<section class="form_section">
+				<span class="sstitre">2011-2012 <strong>Bachelor of science</strong></span><br/>
+				<span class="content">Option Earth and life sciences.<br/>Bernard Palissy High School, Agen.</span>
+			</section>
+		</nav>	
+		
+		<hr />
+	
+		<nav id="expe_pro">
+			<img id="expe_img" src="https://lh3.googleusercontent.com/-OBCKvcb50A0/UnPbgPMvFXI/AAAAAAAAAdQ/8vTY53dbpmA/s32/experiences_pro.png" alt=""/>
+			<p class="categ">Work experience</p>
+			
+			<section class="expe_section first">
+				<table>
+					<tr>
+						<td>
+							<img src="https://lh3.googleusercontent.com/-zhVnvFWViTg/UnWfr5m2r2I/AAAAAAAAAhI/1h60AtF3GP0/s105/logoUDA.png" class="expe_pro_img" alt=""/>
+						</td>
+						
+						<td>
+							<p class="sstitre">Since September 2013, <strong>Tutor</strong> at the University of Aurillac.</p>
+							
+							<span class="content">
+									Helped second year-students in bioinformatics to understand different <br/>programming languages : Perl, JAVA.<br />
+									Person in charge of the mentoring program and intermediate between the professor responsible of the second-year students and the others tutors.
+							</span>
+						</td>
+					</tr>
+				</table>
+			</section>
+			
+			<section class="expe_section">
+				<table>
+					<tr>
+						<td>
+							<img src="https://lh4.googleusercontent.com/-xvuLJE4eXEw/UnWfjHbiRkI/AAAAAAAAAg4/nsx3SEfkk7U/s105/les_pres_du_moulin2.png" class="expe_pro_img" alt=""/>
+						</td>
+						
+						<td>
+							<p class="sstitre">July-August 2013 <strong>Maintenance officer</strong> at the retirement home "Les Prés du Moulin", Francescas.</p>
+							
+							<span class="content">
+								Polyvalent work : repair and maintenance of equipment and different parts of the house (plumbing, electrical, gardening, ...).<br />
+								Maintenance of IT tools.<br />
+								Relationship with the elderly.
+							</span>
+						</td>
+					</tr>
+				</table>
+			</section>
+			
+			<section class="expe_section">
+				<table>
+					<tr>
+						<td>
+							<br/><img src="https://lh4.googleusercontent.com/-75PgSFRdR2k/UnWfjJH-LxI/AAAAAAAAAgk/R_tkgM9OReY/s105/gea47_logo.png" class="expe_pro_img" alt=""/>
+						</td>
+						
+						<td>
+							<p class="sstitre">July-August 2012, <strong>Farmworker</strong> for the agricultural employers group of Lot-et-Garonne, Agen.</p>
+						
+							<span class="content">
+								Detasseling corn.<br/>
+								Harvest oignons.
+							</span>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</nav>
+
+		<hr/>
+		
+		<nav id="competences">
+			<img id="comp_img" src="https://lh4.googleusercontent.com/-GHNsyXokpVo/UnPbfYwD0MI/AAAAAAAAAdA/klLu0vvaFnE/s32/competences.png" alt=""/>
+			<p class="categ">Professionnal skills</p>
+			
+			<p class="sstitre first"><strong>Computer skills</strong></p>
+			<ul id="comp">
+				<li>
+					<img class="ico_comp" src="https://lh3.googleusercontent.com/-pqnk1QB6BEY/UnPbIVeyDeI/AAAAAAAAAZs/HWvceJ2iNd0/s32/html5.png" alt=""/>
+					<span class="header_comp">HTML5</span><br />
+					<span class="lvl5">Master</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh3.googleusercontent.com/-2cqr0CnAV0g/UnPbIQdKWzI/AAAAAAAAAZw/0Zyqb6RkmKI/s32/css3.png" alt=""/>
+					<span class="header_comp">CSS3</span><br />
+					<span class="lvl5">Master</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh6.googleusercontent.com/-SSVArxQg8vw/UnPbLJY6GCI/AAAAAAAAAaU/Z54fLzB_7hs/s32/php.png" alt=""/>
+					<span class="header_comp">PHP</span><br />
+					<span class="lvl3">Adept</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh4.googleusercontent.com/-eY2i1mxqMm0/UnPbJw0ppGI/AAAAAAAAAaQ/B6kL9FAfjBk/s32/mysql.png" alt=""/>
+					<span class="header_comp">MySQL</span><br />
+					<span class="lvl2">Knowledge</span>
+				</li>
+
+				<li>
+					<img class="ico_comp" src="https://lh5.googleusercontent.com/-Tgg0yg7O09A/UnPbI03m4fI/AAAAAAAAAaA/TWpVk7zJmOs/s32/javascript.png" alt=""/>
+					<span class="header_comp">Javascript</span><br />
+					<span class="lvl5">Master</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh6.googleusercontent.com/-mAMwgQ7IWzw/UnPbJ7CTQrI/AAAAAAAAAaE/9BikF5G20gQ/s32/jquery.png" alt=""/>
+					<span class="header_comp">Jquery</span><br />
+					<span class="lvl4">Expert</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh4.googleusercontent.com/-kLULuk738Js/UnWfUGZCISI/AAAAAAAAAfw/GmVlBisLJhk/s32/perl.png" alt=""/>
+					<span class="header_comp">Perl</span><br />
+					<span class="lvl4">Expert</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh6.googleusercontent.com/-SlPOgAjx4G8/UnWfTEmAW2I/AAAAAAAAAf8/nzhnnQ4vFuE/s32/java.png" alt=""/>
+					<span class="header_comp">Java</span><br />
+					<span class="lvl3">Adept</span>
+				</li>
+				
+				
+				<li>
+					<img class="ico_comp" src="https://lh5.googleusercontent.com/-CZi1p520ZnI/UnPbMdukv4I/AAAAAAAAAao/2nBXBEODMLo/s32/ps.png" alt=""/>
+					<span class="header_comp">Photoshop</span><br />
+					<span class="lvl2">Knowledge</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh3.googleusercontent.com/-6a1T-syZeiA/UnWfTjGnyhI/AAAAAAAAAfs/ey2q_8IaiLI/s32/office.png" alt=""/>
+					<span class="header_comp">Office</span><br />
+					<span class="lvl5">Master</span>
+				</li>
+			</ul>
+			
+			<p class="sstitre"><strong>Languages</strong></p>
+			<ul id="langues">
+				<li>
+					<img class="ico_comp" src="https://lh5.googleusercontent.com/-n6WQ62_mkmI/UnWfVHND7vI/AAAAAAAAAgA/T3SFqm9KrOI/s32/francais2.png" alt=""/>
+					<span class="header_comp">French</span><br />
+					<span class="lvl5">Native</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh5.googleusercontent.com/-INB4aN2blUI/UnWfSh0p05I/AAAAAAAAAfc/kcHF7_QRcUY/s32/anglais.png" alt=""/>
+					<span class="header_comp">English</span><br />
+					<span class="lvl4">Fluent</span>
+				</li>
+				
+				<li>
+					<img class="ico_comp" src="https://lh3.googleusercontent.com/-r7ID0baZUfs/UnWfSjHr37I/AAAAAAAAAfk/W7FO2t5sThg/s32/italien2.png" alt=""/>
+					<span class="header_comp">Italien</span><br />
+					<span class="lvl2">Basic</span>
+				</li>
+			</ul>
+		</nav>
+		
+		<hr />
+		
+		<nav id="centres_interet">
+			<img id="ci_img" src="https://lh3.googleusercontent.com/-sUouGP0L4Yk/UnPbffrWONI/AAAAAAAAAdE/XKGhef_7mtI/s32/centre_interet.png" alt=""/>
+			<p class="categ">Hobbies & Interests</p>
+			
+			<ul id="ci_lst">
+				<li id="photo">
+					<table>
+						<tr>
+							<td id="ci_prog_img">				
+								<img class="ico_ci" src="https://lh3.googleusercontent.com/-8j0H-PNtTG8/UnWfeubjvSI/AAAAAAAAAgM/1D7vmT81uhE/s32/programmation.png" alt="" />
+							</td>
+							<td id="ci_prog">							
+								<span class="sstitre">Programming</span><br />
+								<span class="content">Self-taught, semi-final of the contest Prologin, in 2012.</span>
+							</td>
+						</tr>
+					</table>								
+				</li>
+			
+				<li>
+					<table>
+						<tr>
+							<td>				
+								<img class="ico_ci" src="https://lh4.googleusercontent.com/-T1j_GJvGQfA/UnWfeuOcrvI/AAAAAAAAAgY/axRHzyLZ7sg/s256/basket.png" alt="" />
+							</td>
+							<td>									
+								<span class="sstitre">Basket</span><br />
+								<span class="content">Practiced in club for 3 years, until 2011.<br />Now practiced for pleasure.</span>
+							</td>
+						</tr>
+					</table>
+				</li>
+				
+				<li>
+					<table>
+						<tr>
+							<td id="ci_first2">
+								<img class="ico_ci" src="https://lh5.googleusercontent.com/-FStMvzLEO0M/UnWfelhRMyI/AAAAAAAAAgU/KlWtcpzkZL4/s32/parkour.png" alt="" />
+							</td>
+							<td id="ci_first">
+								<span class="sstitre">Parkour</span><br/>
+								<span class="content">Practiced throughout high school.</span>
+							</td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+		</nav>
+		
+		<hr />
+		
+		<footer>	
+			<section id="plan">
+				<img id="contact_img" src="https://lh6.googleusercontent.com/-_MHRtX16fW4/UnPbfazRq4I/AAAAAAAAAc8/svvZhyNTDjc/s32/contact.png" alt=""/>
+				<p class="categ">Contact</p>
+				
+				<p class="content contact">
+					3, rue de la châtaigneraie<br />
+					Appartement 4<br />
+					15000 Aurillac<br /><br />
+					
+					Tel. : (+33)6 20 83 59 83<br />
+					Email : sabatet.valentin@gmail.com<br/>
+				</p>
+				
+				<iframe id="map" src="https://www.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=3+Rue+de+la+Ch%C3%A2taigneraie,+Aurillac,+Auvergne&amp;aq=0&amp;oq=3+rue+de+la+chataigneraie+a&amp;sll=48.877671,2.323265&amp;sspn=0.041151,0.086088&amp;ie=UTF8&amp;hq=&amp;hnear=3+Rue+de+la+Ch%C3%A2taigneraie,+15000+Aurillac,+Cantal,+Auvergne&amp;t=h&amp;z=14&amp;ll=44.931571,2.439097&amp;output=embed"></iframe><br /><small></small>
+			</section>
+		</footer>
+	</body>
+</html>
