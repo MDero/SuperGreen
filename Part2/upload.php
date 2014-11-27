@@ -5,7 +5,6 @@ class Constants
 	/* Some static variables */
 	const BASE_PATH = "../../backofficeimages/";
 	static $valid_extensions = array("jpeg", "jpg", "png");
-	const MAX_FILE_SIZE = 100000; 
 	const MAX_WIDTH = 900;
 	const MAX_HEIGHT = 360; 
 }
