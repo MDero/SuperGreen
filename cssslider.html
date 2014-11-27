@@ -9,7 +9,7 @@
 	
 </head>
 <body style="background-color:#d7d7d7; margin: auto; text-align: center;">
-	<p style="font-size:24px"><?php echo get_memory_usage(); ?></p>
+	
 	<!-- Start cssSlider.com -->
 	<link rel="stylesheet" href="engine1/style.css">
 	<!--[if IE]><link rel="stylesheet" href="engine1/ie.css"><![endif]-->
@@ -154,6 +154,6 @@
 		
 		</div>
 		<!-- End cssSlider.com -->
-		
+		<p style="font-size:24px"><?php echo memory_get_usage() . "\n"; ?></p>
 </body>
 </html>
