@@ -1,17 +1,21 @@
-@import "http://fonts.googleapis.com/css?family=Droid+Sans";
 form{
 background-color:#fff
 }
-#maindiv{
-width:960px;
-margin: auto;
-padding:10px;
-font-family:'Droid Sans',sans-serif
+body{
+background-color: #334;
+margin : 0;
+width : 100%; 
 }
+
 #formdiv{
+border-radius : 200px;
+margin : auto;
 width:500px;
-float:left;
-text-align:center
+margin-top : 2%;
+vertical-align : middle;
+text-align:center;
+font-family: 'Calibri Light';
+font-size : auto;
 }
 form{
 padding:40px 20px;
@@ -25,9 +29,10 @@ margin-left:30px
 background-color: black;
 border:1px solid black;
 color:#0F0;
-border-radius:50px;
-padding:10px;
-box-shadow:2px 2px 15px rgba(0,0,0,.75)
+border-radius:25px;
+padding: 15px 40px 15px 40px;
+box-shadow:2px 2px 15px rgba(0,0,0,.75);
+font-size : 20px;
 }
 .upload:hover{
 cursor:pointer;
@@ -38,21 +43,23 @@ box-shadow:0 0 50px rgba(0,255,0,.75)
 #file{
 color:black;
 padding:15px;
-border:1px  #123456;
-background-color: #0F0;
-border-radius:5px;
+border: 2px solid black;
+background-color: #0C3;
+box-shadow:0 0 5px rgba(0,0,0,.75)
 }
 
 #upload{
-margin-left:45px
+margin-left:auto
 }
-#noerror{
+.noerror{
 color:green;
-text-align:left
+text-align:center;
+font-size : 20px;
 }
-#error{
+.error{
 color:red;
-text-align:left
+text-align:center;
+font-size : 20px;
 }
 #img{
 width:17px;
@@ -73,3 +80,4 @@ border:1px solid #e8debd
 b{
 color:red
 }
+

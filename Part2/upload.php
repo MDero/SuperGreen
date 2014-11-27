@@ -3,7 +3,7 @@
 class Constants 
 {
 	/* Some static variables */
-	const BASE_PATH = "backoffice/upload/";
+	const BASE_PATH = "../../backofficeimages/";
 	static $valid_extensions = array("jpeg", "jpg", "png");
 	const MAX_FILE_SIZE = 100000; 
 	const MAX_WIDTH = 900;
@@ -13,6 +13,11 @@ class Constants
 /* Script to be executed every time */
 if (isset($_POST['submit'])) 
 {
+	/* Prepare variables to assess success or failure */
+	$successes = 0; 
+	$failures = 0; 
+
+	/* Execution */
 	$count = count($_FILES['file']['name']);
 	for ($i = 0; $i < $count; ++$i) 
 	{
@@ -27,13 +32,17 @@ if (isset($_POST['submit']))
 		//compute the image 
 		if (computeImage($ext,$filename))
 		{
-			echo  '<span id="noerror">Success!</span><br/><br/>';
+			$successes++;
 		}
 		else 
 		{
-			echo '<span id="error">Error!</span><br/><br/>';
+			$failures++;	
 		}	
 	}
+	
+	echo  '<span id="result"><p class="noerror">'.$successes.' succeeded</p><p class="error">'.$failures.' failed </p></span><br/><br/>';
+	
+	
 }
 
 function computeImage($ext,$filename)
@@ -48,7 +57,7 @@ function computeImage($ext,$filename)
 		
 		//determine if there is a need to compress 
 		$jpg = ($ext == "jpg"|| $ext == "jpeg");
-		if ($width*$height > Constants::MAX_WIDTH*Constants::MAX_HEIGHT || !$jpg)//need to compress
+		if ($width > Constants::MAX_WIDTH || $height > Constants::MAX_HEIGHT || !$jpg)//need to compress
 		{
 			/* create prior image data depending on extension */
 			if($jpg)
@@ -68,10 +77,10 @@ function computeImage($ext,$filename)
 				$src = imagecreatefrombmp($filename);
 			}
 					
-			/* Calculate new size */
-			$aspectRatio = $width/$height;
-			$newWidth = $aspectRatio < 1.0 ? Constants::MAX_WIDTH : $aspectRatio * Constants::MAX_HEIGHT;
-			$newHeight = (1.0/$aspectRatio) * $newWidth;
+			/* Calculate new size */			
+			$newSize = fit($width,$height,Constants::MAX_WIDTH,Constants::MAX_HEIGHT);
+			$newWidth = $newSize[0];
+			$newHeight = $newSize[1];
 					
 			/* Create resized image empty data */
 			$tmp=imagecreatetruecolor($newWidth,$newHeight);
@@ -98,6 +107,12 @@ function computeImage($ext,$filename)
 	{    
 		echo '<span id="error">'.$filename.'<br>File too big or is of unsupported format</span><br/><br/>';
 	}
+}
+
+function fit($srcWidth, $srcHeight, $maxWidth, $maxHeight) 
+{
+    $ratio = min($maxWidth / $srcWidth, $maxHeight / $srcHeight);
+    return array($srcWidth*$ratio,$srcHeight*$ratio);
 }
 
 ?>
