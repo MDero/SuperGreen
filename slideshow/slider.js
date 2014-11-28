@@ -12,7 +12,7 @@ function goTo(indexLi) {
 	$capt = $currentSlide.find(".picCaption");
 	($capt.html() != "") ? $capt.show() : $capt.hide();
 	
-	$("#timeline").html((currentIndex+1) + "/" + $lastChild);
+	$("#timeline").html((currentIndex+1) + "/" + $nbrChild);
 	$("#plan li").removeClass("activeButton");
 	$currentSlide.addClass("activeButton");
 }
@@ -65,16 +65,16 @@ function nextDiapo() {
 	goTo(currentIndex);
 }
 
+function pause() {
+	$(this).dequeue();
+	clearInterval(timer);
+	$("#play").show();
+	$("#pause").hide();
+}
+
 $(function() {
 	$(".containerSlide").bind("mouseenter", function() { if($("#play").is(":hidden")) { clearInterval(timer) }})
 						.bind("mouseleave", function() { if($("#play").is(":hidden")) { timer = setInterval(nextDiapo, slideInterval) }});
-
-	$("#pause").click(function() {
-		$(this).dequeue();
-		clearInterval(timer);
-		$("#play").show();
-		$("#pause").hide();
-	});
 
 	$("#play").click(function() {
 		clearInterval(timer);
@@ -82,21 +82,39 @@ $(function() {
 		$("#pause").show();
 		$("#play").hide();
 	});
-	//ffdsfsfd
-	$("#plan li").live("click", function() {
-		var index = $("#plan li").index($(this));
-		$currentSlide = $(".slider li").eq(index);
-		$formerSlide = $(".slider li").eq(currentIndex);
-		goTo(index);
-		
-		$formerSlide.hide();
-		$currentSlide.show();
-		
-		currentIndex = index; 
-		$("#pause").trigger("click");
-	});
-		
 	
+	$("#plan li").live("click", function() {
+		$element = $(".slider");
+		var difference = indexButton-indexSlide;
+		var indexButton = $("#plan li").index($(this));
+		var indexSlide = currentIndex;
+
+		if(difference == 0) {
+			clearInterval(timer);
+			timer = setInterval(nextDiapo, SlideInterval);
+		} else {
+			while(indexSlide != indexButton) {
+				$element.css({marginLeft:-900}).find("li:last").after($element.find("li:first"));  
+				indexSlide = (indexSlide+1)%$nbrChild;
+			}
+		
+			goTo(indexButton);
+			currentIndex = indexButton;
+		}
+		
+		if($("#pause").is(":visible"))
+			pause();
+	});
+	
+	/*$(document).on('pageinit', function(event){
+	   $("#swiper").swiperight(function() {
+			nextDiapo();
+		}).swipeleft(function() {
+			prevDiapo();
+		});
+	});	*/
+		
+	$("#pause").click(pause);
 	$("#next").click(nextDiapo);
 	$('#prev').click(prevDiapo);
 });
