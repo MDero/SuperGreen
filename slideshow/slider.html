@@ -12,23 +12,17 @@
 	<script type="text/javascript">
 		var timer;
 		var slideInterval = 3000;
+		var currentIndex = 1;
 		
 		$(function(){	
-			$currentSlide = $(".slider li:first");
+			$currentSlide = $(".slider li:eq(1)");
+			addTimeLine();
 			$currentSlide.addClass("active");
 			$lastChild = $(".slider li").length;
-			addTimeLine();
 			
-			//$(".c_slider").animate({marginLeft:-900},1000);
-			
-			//checkParameters($currentSlide);
-			
-			//timer = setInterval(nextDiapo, slideInterval);
-			
-			//$("#plan li").click(function() { goTo($("#plan li").index($(this))); pause() });
-			
-			/*$(".slider").bind("mouseenter", function() { if($("#play").is(":hidden")) { clearInterval(timer) }})
-						.bind("mouseleave", function() { if($("#play").is(":hidden")) { timer = setInterval(nextSlide, slideInterval) }})*/
+			$(".slider").animate({marginLeft:-900},1000);
+			goTo(currentIndex);
+			timer = setInterval(nextDiapo, slideInterval);
 		});	
 	</script>
 	
@@ -49,33 +43,29 @@
 		</div>
     </div>
 	
-	<div class="container">
+	<div class="containerGlobal">
 		<div class="row">
-			<section id="slideshow">  	  
-				<ul class="controlButton">
-					<li id="play" class="playButton" style="display:none;"></li>  
-					<li id="pause" class="pauseButton"></li>  
-					<li id="next" class="nextButton"></li>  
-					<li id="prev" class="prevButton"></li>  
-				</ul>
-				
-				<span id="active" class="activeButton"></span>
-				<span id="other" class="otherButton"></span> 
-				
-				<div class="container">  
-						<ul class="slider">
-							<li class="li_slider"><img src="orage.jpg" alt="img1" /><span class="caption_slider"></span></li>
-							<li class="li_slider"><img src="orage2.jpg" alt="img1" /><span class="caption_slider"></span>  </li>
-							<li class="li_slider"><img src="orage3.jpg" alt="img1" /><span class="caption_slider"></span>  </li>
-							<li class="li_slider"><img src="" alt="img4" /><span class="caption_slider"></span></li>
-							<li class="li_slider"><img src="" alt="img5" /><span class="caption_slider"></span></li>
-						</ul>
-				</div>  
-					 
-				<span id="timeline"></span>  
-				
-				<ul id="plan"></ul>
-			</section>  
+			<center>
+				<span id="timeline"></span>
+				<section id="slideshow">  	  
+					<ul class="controlButton">
+						<li id="play" class="playButton" style="display:none;"></li>  
+						<li id="pause" class="pauseButton"></li>  
+						<li id="next" class="nextButton"></li>  
+						<li id="prev" class="prevButton"></li>  
+					</ul>
+					
+					<div class="containerSlide">  
+							<ul class="slider">
+								<li class="li_slider"><img src="orage.jpg" alt="img1" /><span class="picCaption"></span></li>
+								<li class="li_slider"><img src="orage2.jpg" alt="img1" /><span class="picCaption"></span> </li>
+								<li class="li_slider"><img src="orage3.jpg" alt="img1" /><span class="picCaption"></span> </li>
+							</ul>
+					</div>  
+						
+					<ul id="plan"></ul>
+				</section>  
+			</center>
 		</div>
 	</div>
 <div class="row">

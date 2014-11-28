@@ -1,0 +1,72 @@
+.slideshow {  
+	width: 900px;  
+	height: 380px;  
+	overflow: hidden;  
+	background: #3fbf79;
+	color: #FFF;
+	display:inline-block;
+}  
+  
+.slideshow ul {  
+    /* 8 images donc 8 x 100% */  
+   width: 800%;  
+   height: 360px;  
+   padding:10px; margin:0;  
+   list-style: none;
+	display:inline-block;   
+}  
+.slideshow li {  
+	float: left;
+	width: 900px;
+}  
+
+img {
+height:360px;
+width:auto;
+margin-left:auto;
+margin-right:auto;
+}
+
+.contour
+{
+    position:relative;
+	height:400px;
+    width:950px; 
+	background: #C0C0C0;
+	padding: 30px; 
+	margin:auto;
+	color: #000;
+ 	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px; 
+}
+
+#Display
+{
+position: absolute;
+left: 50%;  
+top: 25%; 
+width: 100%;
+height: auto;
+overflow: auto; 
+display: inline;
+}
+
+ .play ,.pause,.suiv,.prev{
+	width: 55px;
+	height: 55px;
+	display: inline-block;
+	background-image: url("sprite-square.png");
+	background-repeat: no-repeat;
+}
+
+.play { background-position: 0px 0px; position:absolute;right:55px;top:30px}
+.pause { background-position: -55px 0px; position:absolute;right:55px;top:30px}
+.suiv { background-position: 0px -55px;position:absolute; right:55px; top:180px}
+.prev { background-position: 0px -110px;position:absolute; left:55px; top:180px}
+/* .rond { background-position: -55px -55px; position:absolute;right:20px;bottom:10px} */
+
+#number {
+	position: absolute;
+	left: 55px;
+}
