@@ -37,14 +37,12 @@
             <div class="row">
                 <div id="slideshow">
                     <p>
-                        <script type="text/javascript">
-                            $('.autoplay').slick({
-                                slidesToShow: 3,
-                                slidesToScroll: 1,
-                                autoplay: true,
-                                autoplaySpeed: 2000,
+                        <script src="jquery.js"></script> 
+                        <script>
+                            $(function () {
+                                $("#includedContent").load("slider-master/examples-no-jquery/layout-arrangement.source.html");
                             });
-                        </script>
+                        </script> 
                     </p>
                 </div>
             </div>
@@ -57,6 +55,7 @@
                         this video on the networks. The most viral video will be rewarded and will bring you points in the final standings.
                     </p>
                 </div>
+                <div id="includedContent"></div>
                 <div class="col-md-4">
                     <h2>On your marks, Ready, Set, CODE !</h2>
                     <p>The Green Code Lab Challenge is a unique opportunity for you to to develop your skills set in ECO-CONCEPTION.<br>
@@ -87,7 +86,6 @@
             </footer>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.mi.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
