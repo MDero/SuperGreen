@@ -1,44 +1,40 @@
 #slideshow {  
     position: relative;  
     width: 960px;  
-    height: 430px;    
+    height: 430px; 
+	overflow: hidden;  
+	display:inline-block;
+	margin : auto;
 }  
 
-.container{
+.containerSlide{
 	width : 900px;
-	height : 360px;
-	margin : auto;
+	height : 380px;
 	overflow : hidden;
+	display : inline-block;
+	
 }
 
 .slider {
 	display : inline-block;
-
+	width : 500%;
+	height : 360px;
+	margin : 0;
 	list-style-type:none;
  }
  
 .slider li {
-	  position: relative;
-	  display: block;
-	  float: left;
-	  margin: 0;
-	  padding: 0;
+	  float : left;
 	  width: 900px;
-	  height: 360px;
+	  background-color : white;
  }
  
 .slider li img {
-	width : 900px;
 	height : 360px;
+	width : auto;
 	border : 1px solid grey;
+	margin : auto;
 }
-
-
-
-
-
-
-
 
 .controlButton li, #plan li {
 	width: 20px;
@@ -48,19 +44,20 @@
 	list-style : none;
 }
 
-#plan .otherButton { background-position: left top; position : relative }
+#plan { margin-right: 150px }
+#plan li:not(.activeButton) { background-position: left top; position : relative }
 #plan .activeButton { background-position: 50% top; position : relative }
-.controlButton .pauseButton { background-position: 100% top; position : absolute; right : 36px; margin-top: 18px; z-index : 1 }
-.controlButton .nextButton { background-position: left bottom; transform : scale(2); position : absolute; top : 157px; right:38px; z-index : 1}
+.controlButton .pauseButton { background-position: 100% top; position : absolute; right : 3px; margin-top: 18px; z-index : 1 }
+.controlButton .nextButton { background-position: left bottom; transform : scale(2); position : absolute; top : 153px; right:0px; z-index : 1}
 .controlButton .prevButton { background-position: 50% bottom; transform : scale(2); top : 157px; left: 38px; z-index : 1; position : absolute }
-.controlButton .playButton { background-position: 100% bottom; position : absolute; right : 36px; margin-top: 18px; z-index : 1; display : none }
+.controlButton .playButton { background-position: 100% bottom; position : absolute; right : 3px; margin-top: 18px; z-index : 1; display : none }
 
-.activeButton:hover, .otherButton:hover, .controlButton .nextButton:hover, .controlButton .prevButton:hover, .controlButton .pauseButton:hover, .controlButton .playButton:hover { cursor : pointer;}
+#plan li.activeButton:hover, #plan li:not(.activeButton), .controlButton .nextButton:hover, .controlButton .prevButton:hover, .controlButton .pauseButton:hover, .controlButton .playButton:hover { cursor : pointer;}
 
 #timeline {
 	position : relative;
-	top : 15px;
-	left : 14px;
+	bottom : 30px;
+	left : 250px;
 	display : inline-block;
 	font-size : 12px;
 	font-style : bold;
