@@ -82,6 +82,7 @@ $(function() {
 		$("#pause").show();
 		$("#play").hide();
 	});
+        
 	//ffdsfsfd
 	$("#plan li").live("click", function() {
 		var index = $("#plan li").index($(this));
